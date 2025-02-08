@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Academy - Next Generation Learning</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <span class="gradient-text">AI</span> Academy
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title animate-slide-up">
+                    <span class="gradient-text">Transform</span> Your Future
+                    <br>With AI Education
+                </h1>
+                <p class="hero-subtitle animate-slide-up delay-1">
+                    Cutting-edge courses taught by global experts in artificial intelligence
+                </p>
+                <div class="cta-container animate-slide-up delay-2">
+                    <button class="cta-btn">Notify Me on Launch</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="orbital">
+                    <div class="core"></div>
+                    <div class="orbit"></div>
+                    <div class="orbit"></div>
+                    <div class="orbit"></div>
+                    <i class="fas fa-robot ai-icon"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="feature-card">
+                <div class="card-icon"><i class="fas fa-globe"></i></div>
+                <h3>Global Instructors</h3>
+                <p>Learn from industry leaders and AI pioneers from around the world</p>
+            </div>
+            <div class="feature-card">
+                <div class="card-icon"><i class="fas fa-brain"></i></div>
+                <h3>Cutting-Edge Content</h3>
+                <p>Stay ahead with curriculum designed around latest AI advancements</p>
+            </div>
+            <div class="feature-card">
+                <div class="card-icon"><i class="fas fa-certificate"></i></div>
+                <h3>Certification</h3>
+                <p>Earn recognized credentials upon course completion</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="countdown">
+        <h2>Launching In:</h2>
+        <div class="timer">
+            <div class="time-segment">
+                <span id="days">00</span>
+                <small>Days</small>
+            </div>
+            <div class="time-segment">
+                <span id="hours">00</span>
+                <small>Hours</small>
+            </div>
+            <div class="time-segment">
+                <span id="minutes">00</span>
+                <small>Minutes</small>
+            </div>
+            <div class="time-segment">
+                <span id="seconds">00</span>
+                <small>Seconds</small>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 AI Academy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        const countDownDate = new Date("Jan 1, 2024 00:00:00").getTime();
+
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("countdown").innerHTML = "LAUNCHED!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
