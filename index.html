@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Academy - Next Generation Learning</title>
+    <title>Hoshe Masnoi Academy - Next Generation Learning</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="container">
             <div class="logo">
-                <span class="gradient-text">AI</span> Academy
+                <span class="gradient-text">Hoshe Masnoi</span> Academy
             </div>
             <ul class="nav-links">
                 <li><a href="#">Home</a></li>
@@ -67,7 +68,7 @@
         </div>
     </section>
 
-    <div class="countdown">
+    <div id="countdown" class="countdown">
         <h2>Launching In:</h2>
         <div class="timer">
             <div class="time-segment">
@@ -91,17 +92,23 @@
 
     <footer>
         <div class="container">
-            <p>© 2023 AI Academy. All rights reserved.</p>
+            <p>© 2024 Hoshe Masnoi Academy. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
         // Countdown Timer
-        const countDownDate = new Date("Jan 1, 2024 00:00:00").getTime();
+        const countDownDate = new Date("Jan 1, 2025 00:00:00").getTime();
 
         const timer = setInterval(function() {
             const now = new Date().getTime();
             const distance = countDownDate - now;
+
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("countdown").innerHTML = "<h2>LAUNCHED!</h2>";
+                return;
+            }
 
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -113,10 +120,6 @@
             document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
             document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
 
-            if (distance < 0) {
-                clearInterval(timer);
-                document.getElementById("countdown").innerHTML = "LAUNCHED!";
-            }
         }, 1000);
     </script>
 </body>
