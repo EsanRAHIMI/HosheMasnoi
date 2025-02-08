@@ -88,7 +88,7 @@ body {
 
 /* CTA Button */
 .cta-btn {
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
     color: white;
     padding: 1rem 2.5rem;
     border: none;
@@ -100,6 +100,7 @@ body {
 }
 
 .cta-btn:hover {
+    background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
     transform: translateY(-3px);
     box-shadow: 0px 6px 15px rgba(99, 102, 241, 0.6);
 }
@@ -116,13 +117,20 @@ body {
     position: absolute;
     width: 150px;
     height: 150px;
-    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    background: radial-gradient(circle, var(--primary-color), var(--accent-color), var(--secondary-color));
     border-radius: 50%;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     filter: blur(25px);
-    opacity: 0.4;
+    opacity: 0.5;
+    animation: pulse 3s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.1); }
+    100% { opacity: 0.4; transform: scale(1); }
 }
 
 .orbit {
@@ -264,4 +272,17 @@ footer {
     .time-segment {
         min-width: 100px;
     }
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background 0.5s ease-in-out;
+}
+
+.gradient-text:hover {
+    background: linear-gradient(90deg, var(--accent-color), var(--secondary-color), var(--primary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
